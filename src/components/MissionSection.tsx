@@ -2,6 +2,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import missionImg from "@/assets/mission.jpg";
 import visionImg from "@/assets/vision.jpg";
+import ImageReveal from "./ImageReveal";
+import { ScrollTextReveal } from "./TextReveal";
+import GradientOrb from "./GradientOrb";
 
 const FadeInSection = ({
   children,
@@ -38,6 +41,9 @@ const MissionSection = () => {
 
   return (
     <section id="nosotros" ref={containerRef} className="section-padding relative overflow-hidden">
+      {/* Ambient glow */}
+      <GradientOrb className="top-1/4 -right-60" size={600} color="gold" delay={1} />
+
       {/* Headline */}
       <FadeInSection className="text-center mb-16 sm:mb-32 max-w-4xl mx-auto">
         <p className="text-eyebrow mb-6">Nuestra esencia</p>
@@ -45,10 +51,9 @@ const MissionSection = () => {
           La seguridad no es un producto.{" "}
           <span className="gold-gradient-text">Es una filosofía.</span>
         </h2>
-        <p className="text-body-lg max-w-2xl mx-auto">
-          Como cualquier gran diseño, la verdadera seguridad es invisible.
-          Se siente en cada rincón, en cada momento, sin imponerse.
-        </p>
+        <ScrollTextReveal className="text-body-lg max-w-2xl mx-auto">
+          Como cualquier gran diseño, la verdadera seguridad es invisible. Se siente en cada rincón, en cada momento, sin imponerse.
+        </ScrollTextReveal>
       </FadeInSection>
 
       {/* Mission */}
@@ -68,14 +73,12 @@ const MissionSection = () => {
         </FadeInSection>
 
         <FadeInSection className="relative">
-          <div className="overflow-hidden rounded-3xl">
-            <motion.img
-              style={{ y: imgY1 }}
-              src={missionImg}
-              alt="Misión BACOR"
-              className="w-full h-[280px] sm:h-[450px] object-cover scale-110"
-            />
-          </div>
+          <ImageReveal
+            src={missionImg}
+            alt="Misión BACOR"
+            imgClassName="h-[280px] sm:h-[450px]"
+            direction="left"
+          />
         </FadeInSection>
       </div>
 
@@ -96,14 +99,12 @@ const MissionSection = () => {
         </FadeInSection>
 
         <FadeInSection className="relative lg:order-1">
-          <div className="overflow-hidden rounded-3xl">
-            <motion.img
-              style={{ y: imgY2 }}
-              src={visionImg}
-              alt="Visión BACOR"
-              className="w-full h-[280px] sm:h-[450px] object-cover scale-110"
-            />
-          </div>
+          <ImageReveal
+            src={visionImg}
+            alt="Visión BACOR"
+            imgClassName="h-[280px] sm:h-[450px]"
+            direction="right"
+          />
         </FadeInSection>
       </div>
     </section>

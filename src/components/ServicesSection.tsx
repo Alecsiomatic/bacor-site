@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import { ScrollTextReveal } from "./TextReveal";
 import guardsImg from "@/assets/service-guards.jpg";
 import monitoringImg from "@/assets/service-monitoring.jpg";
 import transportImg from "@/assets/service-transport.jpg";
@@ -54,13 +55,11 @@ const ServiceCard = ({
   const y = useTransform(scrollYProgress, [0, 1], [80, 0]);
 
   return (
-    <motion.div ref={ref} style={{ opacity, y }}>
+    <motion.div ref={ref} style={{ opacity, y }} className="group">
       <Link
         to={`/servicios/${service.slug}`}
-        className="group block apple-card relative cursor-pointer"
-      >
-        {/* Image */}
-        <div className="relative h-[280px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-3xl">
+        className="block apple-card relative cursor-pointer">
+        <div className="relative h-[280px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-3xl transition-transform duration-700 ease-out group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-gold/10">
           <motion.img
             src={service.image}
             alt={service.title}
@@ -85,7 +84,7 @@ const ServiceCard = ({
           {/* Content overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 md:p-10">
             <p className="text-eyebrow mb-3 opacity-70">{service.subtitle}</p>
-            <h3 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
               {service.title}
             </h3>
           </div>
@@ -112,10 +111,10 @@ const ServicesSection = () => {
           Cuatro pilares.{" "}
           <span className="gold-gradient-text">Una promesa.</span>
         </h2>
-        <p className="text-body-lg max-w-2xl mx-auto">
+        <ScrollTextReveal className="text-body-lg max-w-2xl mx-auto">
           Cada servicio está diseñado con la misma obsesión por el detalle.
           Porque proteger es un arte que exige excelencia absoluta.
-        </p>
+        </ScrollTextReveal>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-6xl mx-auto">
