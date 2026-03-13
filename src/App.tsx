@@ -14,7 +14,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/bacor-site">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/servicios/:slug" element={<ServiceDetail />} />
