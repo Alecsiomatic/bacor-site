@@ -39,7 +39,7 @@ const MissionSection = () => {
   return (
     <section id="nosotros" ref={containerRef} className="section-padding relative overflow-hidden">
       {/* Headline */}
-      <FadeInSection className="text-center mb-32 max-w-4xl mx-auto">
+      <FadeInSection className="text-center mb-16 sm:mb-32 max-w-4xl mx-auto">
         <p className="text-eyebrow mb-6">Nuestra esencia</p>
         <h2 className="text-headline-lg mb-8">
           La seguridad no es un producto.{" "}
@@ -52,7 +52,7 @@ const MissionSection = () => {
       </FadeInSection>
 
       {/* Mission */}
-      <div className="grid lg:grid-cols-2 gap-20 items-center mb-40 max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-10 sm:gap-20 items-center mb-20 sm:mb-40 max-w-6xl mx-auto">
         <FadeInSection>
           <p className="text-eyebrow mb-6">Misión</p>
           <h3 className="text-headline-md mb-8 text-foreground">
@@ -73,14 +73,14 @@ const MissionSection = () => {
               style={{ y: imgY1 }}
               src={missionImg}
               alt="Misión BACOR"
-              className="w-full h-[450px] object-cover scale-110"
+              className="w-full h-[280px] sm:h-[450px] object-cover scale-110"
             />
           </div>
         </FadeInSection>
       </div>
 
       {/* Vision */}
-      <div className="grid lg:grid-cols-2 gap-20 items-center max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-10 sm:gap-20 items-center max-w-6xl mx-auto">
         <FadeInSection className="relative lg:order-2">
           <p className="text-eyebrow mb-6">Visión</p>
           <h3 className="text-headline-md mb-8 text-foreground">
@@ -101,7 +101,7 @@ const MissionSection = () => {
               style={{ y: imgY2 }}
               src={visionImg}
               alt="Visión BACOR"
-              className="w-full h-[450px] object-cover scale-110"
+              className="w-full h-[280px] sm:h-[450px] object-cover scale-110"
             />
           </div>
         </FadeInSection>

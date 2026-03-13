@@ -60,7 +60,7 @@ const ServiceDetail = () => {
       <Navbar />
 
       {/* Hero */}
-      <section ref={heroRef} className="relative h-[85vh] flex items-end overflow-hidden">
+      <section ref={heroRef} className="relative h-[70vh] sm:h-[85vh] flex items-end overflow-hidden">
         <motion.div className="absolute inset-0" style={{ y: heroY, scale: heroScale }}>
           <img src={service.heroImage} alt={service.title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-background/50" />
@@ -89,7 +89,7 @@ const ServiceDetail = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.3 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="block text-[8rem] md:text-[12rem] font-semibold leading-none text-foreground/5 absolute -top-10 right-6 lg:right-12 select-none"
+            className="hidden sm:block text-[8rem] md:text-[12rem] font-semibold leading-none text-foreground/5 absolute -top-10 right-6 lg:right-12 select-none"
           >
             {service.number}
           </motion.span>
@@ -124,8 +124,8 @@ const ServiceDetail = () => {
       </section>
 
       {/* Description + Philosophy */}
-      <section className="px-6 md:px-12 lg:px-20 pb-32">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20">
+      <section className="px-4 sm:px-6 md:px-12 lg:px-20 pb-16 sm:pb-32">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-20">
           <FadeIn>
             <p className="text-eyebrow mb-6">El enfoque</p>
             <p className="text-xl md:text-2xl font-light leading-[1.7] text-foreground/80">
@@ -143,8 +143,8 @@ const ServiceDetail = () => {
       </section>
 
       {/* Features */}
-      <section className="px-6 md:px-12 lg:px-20 pb-40">
-        <FadeIn className="text-center mb-20">
+      <section className="px-4 sm:px-6 md:px-12 lg:px-20 pb-20 sm:pb-40">
+        <FadeIn className="text-center mb-10 sm:mb-20">
           <p className="text-eyebrow mb-4">Lo que nos define</p>
           <h3 className="text-headline-md text-foreground">
             Los detalles que marcan{" "}
@@ -152,7 +152,7 @@ const ServiceDetail = () => {
           </h3>
         </FadeIn>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {service.features.map((feature, i) => (
             <FadeIn key={feature.title}>
               <div className="group p-8 rounded-3xl bg-card border border-border/50 hover:border-gold/20 transition-all duration-700 h-full">
@@ -172,18 +172,18 @@ const ServiceDetail = () => {
       </section>
 
       {/* Gallery - cinematic scroll */}
-      <section className="pb-40 overflow-hidden">
-        <FadeIn className="px-6 md:px-12 lg:px-20 mb-12">
+      <section className="pb-20 sm:pb-40 overflow-hidden">
+        <FadeIn className="px-4 sm:px-6 md:px-12 lg:px-20 mb-8 sm:mb-12">
           <p className="text-eyebrow">En acción</p>
         </FadeIn>
-        <div className="flex gap-4 px-6 md:px-12 lg:px-20">
+        <div className="flex gap-3 sm:gap-4 px-4 sm:px-6 md:px-12 lg:px-20 overflow-x-auto pb-4 snap-x snap-mandatory">
           {service.galleryImages.map((img, i) => (
-            <FadeIn key={i} className="flex-shrink-0 w-[70vw] md:w-[45vw] lg:w-[35vw]">
+            <FadeIn key={i} className="flex-shrink-0 w-[80vw] sm:w-[70vw] md:w-[45vw] lg:w-[35vw] snap-center">
               <div className="overflow-hidden rounded-3xl">
                 <motion.img
                   src={img}
                   alt={`${service.title} - ${i + 1}`}
-                  className="w-full h-[50vh] object-cover hover:scale-105 transition-transform duration-1000"
+                  className="w-full h-[35vh] sm:h-[50vh] object-cover hover:scale-105 transition-transform duration-1000"
                 />
               </div>
             </FadeIn>
@@ -205,8 +205,8 @@ const ServiceDetail = () => {
       </section>
 
       {/* Next/Prev navigation */}
-      <section className="px-6 md:px-12 lg:px-20 pb-20">
-        <div className="max-w-5xl mx-auto border-t border-border/30 pt-12 grid grid-cols-2 gap-8">
+      <section className="px-4 sm:px-6 md:px-12 lg:px-20 pb-20">
+        <div className="max-w-5xl mx-auto border-t border-border/30 pt-8 sm:pt-12 grid grid-cols-2 gap-4 sm:gap-8">
           <Link
             to={`/servicios/${prevService.slug}`}
             className="group flex items-center gap-4"
@@ -214,7 +214,7 @@ const ServiceDetail = () => {
             <ArrowLeft className="w-5 h-5 text-muted-foreground group-hover:text-gold transition-all duration-300 group-hover:-translate-x-1" />
             <div>
               <p className="text-xs text-muted-foreground mb-1">Anterior</p>
-              <p className="text-foreground font-medium group-hover:text-gold transition-colors duration-300">
+              <p className="text-foreground font-medium group-hover:text-gold transition-colors duration-300 text-sm sm:text-base">
                 {prevService.title}
               </p>
             </div>
@@ -226,7 +226,7 @@ const ServiceDetail = () => {
           >
             <div>
               <p className="text-xs text-muted-foreground mb-1">Siguiente</p>
-              <p className="text-foreground font-medium group-hover:text-gold transition-colors duration-300">
+              <p className="text-foreground font-medium group-hover:text-gold transition-colors duration-300 text-sm sm:text-base">
                 {nextService.title}
               </p>
             </div>

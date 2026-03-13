@@ -14,7 +14,7 @@ const CareersSection = () => {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0, 1, 1, 0.5]);
 
   return (
-    <section ref={ref} className="relative min-h-[80vh] flex items-center overflow-hidden">
+    <section ref={ref} className="relative min-h-[60vh] sm:min-h-[80vh] flex items-center overflow-hidden">
       <motion.div className="absolute inset-0" style={{ scale: imgScale }}>
         <img src={careersBg} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/75" />
@@ -22,7 +22,7 @@ const CareersSection = () => {
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 container mx-auto px-6 py-32 text-center max-w-3xl"
+        className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-32 text-center max-w-3xl"
       >
         <p className="text-eyebrow mb-8">Únete al equipo</p>
 

@@ -46,7 +46,7 @@ const Navbar = () => {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-6 lg:px-12">
+      <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-12">
         <Link to="/" className="flex items-center gap-3 group">
           <img
             src={logo}

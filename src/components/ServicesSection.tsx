@@ -60,7 +60,7 @@ const ServiceCard = ({
         className="group block apple-card relative cursor-pointer"
       >
         {/* Image */}
-        <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-3xl">
+        <div className="relative h-[280px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-3xl">
           <motion.img
             src={service.image}
             alt={service.title}
@@ -69,21 +69,21 @@ const ServiceCard = ({
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
 
           {/* Number */}
-          <div className="absolute top-8 left-8">
+          <div className="absolute top-4 left-4 sm:top-8 sm:left-8">
             <span className="text-[11px] font-medium tracking-[0.2em] text-foreground/30">
               {service.number}
             </span>
           </div>
 
           {/* Arrow */}
-          <div className="absolute top-8 right-8">
+          <div className="absolute top-4 right-4 sm:top-8 sm:right-8">
             <div className="w-10 h-10 rounded-full bg-foreground/10 backdrop-blur-xl flex items-center justify-center transition-all duration-500 group-hover:bg-gold group-hover:scale-110">
               <ArrowUpRight className="w-4 h-4 text-foreground/60 transition-colors duration-500 group-hover:text-background" />
             </div>
           </div>
 
           {/* Content overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 md:p-10">
             <p className="text-eyebrow mb-3 opacity-70">{service.subtitle}</p>
             <h3 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
               {service.title}
@@ -106,7 +106,7 @@ const ServicesSection = () => {
 
   return (
     <section id="servicios" className="section-padding relative overflow-hidden">
-      <motion.div ref={ref} style={{ opacity, y }} className="text-center mb-24 max-w-4xl mx-auto">
+      <motion.div ref={ref} style={{ opacity, y }} className="text-center mb-12 sm:mb-24 max-w-4xl mx-auto">
         <p className="text-eyebrow mb-6">Servicios</p>
         <h2 className="text-headline-lg mb-8">
           Cuatro pilares.{" "}
@@ -118,7 +118,7 @@ const ServicesSection = () => {
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-6xl mx-auto">
         {services.map((service, index) => (
           <ServiceCard key={service.slug} service={service} index={index} />
         ))}

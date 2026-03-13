@@ -28,7 +28,7 @@ const ContactFooter = () => {
   return (
     <section id="contacto" ref={ref} className="section-padding relative">
       <motion.div style={{ opacity, y }} className="max-w-5xl mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 sm:mb-20">
           <p className="text-eyebrow mb-6">Contacto</p>
           <h2 className="text-headline-lg mb-6">
             Hablemos de lo que{" "}
@@ -36,7 +36,7 @@ const ContactFooter = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-20">
           {/* Info */}
           <div className="flex flex-col justify-center gap-10">
             <a
@@ -60,9 +60,9 @@ const ContactFooter = () => {
               <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-500">
                 <Mail className="w-5 h-5 text-muted-foreground group-hover:text-gold transition-colors duration-500" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground mb-1">Correo</p>
-                <p className="text-foreground font-light">direccion_bacor@outlook.com</p>
+                <p className="text-foreground font-light text-sm sm:text-base truncate">direccion_bacor@outlook.com</p>
                 <p className="text-sm text-muted-foreground font-light mt-0.5">rh.corp.bacor@gmail.com</p>
               </div>
               <ArrowUpRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-gold transition-all duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -112,9 +112,9 @@ const ContactFooter = () => {
       </motion.div>
 
       {/* Footer */}
-      <div className="max-w-5xl mx-auto mt-32 pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-5xl mx-auto mt-16 sm:mt-32 pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
         <img src={logo} alt="BACOR" className="h-8 w-auto opacity-40" />
-        <p className="text-sm text-muted-foreground font-light">
+        <p className="text-xs sm:text-sm text-muted-foreground font-light text-center md:text-left">
           © 2024 Corporativo Securitas Bacor. Todos los derechos reservados.
         </p>
       </div>
