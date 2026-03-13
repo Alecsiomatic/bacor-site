@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 0 0% 98%;
+
+    --radius: 1rem;
+
+    --gold: 42 70% 55%;
+    --gold-light: 42 60% 70%;
+    --gold-dark: 42 80% 38%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', sans-serif;
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background: hsl(var(--gold) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .gold-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
+  }
+
+  .section-padding {
+    @apply py-32 md:py-40 px-6 md:px-12 lg:px-20;
+  }
+
+  .apple-card {
+    @apply rounded-3xl overflow-hidden;
+    background: hsl(var(--card));
+  }
+
+  .apple-button {
+    @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-all duration-300;
+  }
+
+  .apple-button-primary {
+    @apply apple-button;
+    background: hsl(var(--gold));
+    color: hsl(0 0% 0%);
+  }
+
+  .apple-button-primary:hover {
+    background: hsl(var(--gold-light));
+    transform: scale(1.02);
+  }
+
+  .apple-button-secondary {
+    @apply apple-button;
+    background: hsl(0 0% 100% / 0.1);
+    color: hsl(var(--gold-light));
+    backdrop-filter: blur(20px);
+  }
+
+  .apple-button-secondary:hover {
+    background: hsl(0 0% 100% / 0.15);
+    transform: scale(1.02);
+  }
+
+  .text-headline-xl {
+    @apply text-5xl md:text-7xl lg:text-[5.5rem] font-semibold leading-[1.05] tracking-tight;
+  }
+
+  .text-headline-lg {
+    @apply text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.08] tracking-tight;
+  }
+
+  .text-headline-md {
+    @apply text-3xl md:text-5xl font-semibold leading-[1.1] tracking-tight;
+  }
+
+  .text-body-lg {
+    @apply text-xl md:text-2xl font-light leading-relaxed;
+    color: hsl(0 0% 55%);
+  }
+
+  .text-body {
+    @apply text-base md:text-lg font-light leading-relaxed;
+    color: hsl(0 0% 55%);
+  }
+
+  .text-eyebrow {
+    @apply text-xs md:text-sm font-medium tracking-[0.15em] uppercase;
+    color: hsl(var(--gold));
+  }
+
+  .divider-gold {
+    @apply w-12 h-px;
+    background: hsl(var(--gold) / 0.4);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
